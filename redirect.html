@@ -9,9 +9,9 @@
       var urlParams = new URLSearchParams(window.location.search);
       var parameter = urlParams.get('code');
 
-      // Open the desired page with the parameter in a new tab or window
-      var newURL = "makefriends://makefriends.com/spotify?code=" + parameter;
-      window.open(newURL, "_blank");
+      // Display message with link to manually open the desired page
+      var message = 'Click <a href="makefriends://makefriends.com/spotify?code=' + parameter + '">here</a> to open the page.';
+      document.body.innerHTML = message;
     };
   </script>
 </head>
