@@ -9,9 +9,9 @@
       var urlParams = new URLSearchParams(window.location.search);
       var parameter = urlParams.get('code');
 
-      // Redirect to the desired page with the parameter
-      // window.location.href = "https://www.example.com/target-page?parameter=" + parameter;
-      window.location.href = "makefriends://makefriends.com/spotify?code=" + parameter;
+      // Open the desired page with the parameter in a new tab or window
+      var newURL = "makefriends://makefriends.com/spotify?code=" + parameter;
+      window.open(newURL, "_blank");
     };
   </script>
 </head>
