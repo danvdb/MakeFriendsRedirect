@@ -9,20 +9,9 @@
       var urlParams = new URLSearchParams(window.location.search);
       var parameter = urlParams.get('code');
 
-      // Redirect to the desired page
-      window.location.href = 'makefriends://makefriends.com/spotify?code=' + parameter;
-
-      // Create a link to close the window
-      var closeButton = document.createElement('a');
-      closeButton.textContent = 'Close Window';
-      closeButton.href = '#';
-      closeButton.onclick = function() {
-        window.close();
-        return false;
-      };
-
-      // Append the link to the body
-      document.body.appendChild(closeButton);
+      // Open the desired page in a new tab
+      var url = 'makefriends://makefriends.com/spotify?code=' + parameter;
+      window.open(url, '_blank');
     };
   </script>
 </head>
