@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Redirect Page</title>
+  <title>MakeFriends Redirect Page</title>
   <script>
     window.onload = function() {
       // Get the parameter from the URL
       var urlParams = new URLSearchParams(window.location.search);
-      var parameter = urlParams.get('parameter');
+      var parameter = urlParams.get('code');
 
       // Redirect to the desired page with the parameter
-      window.location.href = "https://www.example.com/target-page?parameter=" + parameter;
-      // window.location.href = "makefriends://makefriends.com/myProfile";
+      // window.location.href = "https://www.example.com/target-page?parameter=" + parameter;
+      window.location.href = "makefriends://makefriends.com/spotify?code=" + parameter;
     };
   </script>
 </head>
