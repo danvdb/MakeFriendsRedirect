@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect Page</title>
+  <script>
+    window.onload = function() {
+      // Get the parameter from the URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var parameter = urlParams.get('parameter');
+
+      // Redirect to the desired page with the parameter
+      window.location.href = "https://www.example.com/target-page?parameter=" + parameter;
+
+      // Launch a new URL with the parameter
+      var newURL = "https://www.example.com/other-page?parameter=" + parameter;
+      window.open(newURL);
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
