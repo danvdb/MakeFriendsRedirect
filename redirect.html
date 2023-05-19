@@ -1,35 +1,44 @@
-Can you make the page best looking as possible ?
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>MakeFriends Redirect Page</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
   <script>
     window.onload = function() {
       // Get the parameter from the URL
       var urlParams = new URLSearchParams(window.location.search);
       var parameter = urlParams.get('code');
-
-      // Function to handle link click
-      function handleClick() {
-        // Display a new message when the link is clicked
-        var newMessage = 'Sync is done!';
-
-        // Replace the existing message with the new message
-        document.body.innerHTML = newMessage;
-      }
-
-      // Create the link element
-      var link = document.createElement('a');
-      link.href = 'makefriends://makefriends.com/spotify?code=' + parameter;
-      link.innerHTML = 'Click here to finish the sync.';
-      link.addEventListener('click', handleClick);
-
-      // Append the link to the body element
-      document.body.appendChild(link);
+      
+      // Construct the redirect URL
+      var redirectUrl = 'makefriends://makefriends.com/spotify?code=' + parameter;
+      
+      // Redirect the page
+      window.location.href = redirectUrl;
     };
   </script>
 </head>
 <body>
+  <div class="container">
+    <p class="message">Redirecting...</p>
+  </div>
 </body>
 </html>
