@@ -3,6 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>MakeFriends Redirect Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
   <script>
     window.onload = function() {
       // Get the parameter from the URL
@@ -15,20 +55,25 @@
         var newMessage = 'Sync is done!';
 
         // Replace the existing message with the new message
-        document.body.innerHTML = newMessage;
+        document.getElementById('message').innerHTML = newMessage;
       }
 
       // Create the link element
       var link = document.createElement('a');
       link.href = 'makefriends://makefriends.com/spotify?code=' + parameter;
       link.innerHTML = 'Click here to finish the sync.';
+      link.className = 'button';
       link.addEventListener('click', handleClick);
 
-      // Append the link to the body element
-      document.body.appendChild(link);
+      // Append the link to the container element
+      document.getElementById('container').appendChild(link);
     };
   </script>
 </head>
 <body>
+  <div id="container" class="container">
+    <h1>MakeFriends Redirect Page</h1>
+    <p id="message"></p>
+  </div>
 </body>
 </html>
