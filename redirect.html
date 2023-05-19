@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>MakeFriends Redirect Page</title>
+  <title>MakeFriends - Spotify</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      font-size: 20px;
     }
 
     .container {
@@ -20,12 +21,12 @@
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 36px;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 24px;
       margin-bottom: 20px;
     }
 
@@ -36,7 +37,7 @@
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
-      font-size: 16px;
+      font-size: 24px;
     }
 
     .button:hover {
@@ -51,11 +52,9 @@
 
       // Function to handle link click
       function handleClick() {
-        // Display a new message when the link is clicked
-        var newMessage = 'Sync is done!';
-
-        // Replace the existing message with the new message
-        document.getElementById('message').innerHTML = newMessage;
+        // Replace the button with a confirmation message
+        var confirmationMessage = 'Sync is done!<br>Please click on "OK" on the top left of your screen.';
+        document.getElementById('buttonContainer').innerHTML = confirmationMessage;
       }
 
       // Create the link element
@@ -66,14 +65,14 @@
       link.addEventListener('click', handleClick);
 
       // Append the link to the container element
-      document.getElementById('container').appendChild(link);
+      document.getElementById('buttonContainer').appendChild(link);
     };
   </script>
 </head>
 <body>
   <div id="container" class="container">
     <h1>MakeFriends Redirect Page</h1>
-    <p id="message"></p>
+    <p id="buttonContainer"></p>
   </div>
 </body>
 </html>
