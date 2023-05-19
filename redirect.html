@@ -9,9 +9,23 @@
       var urlParams = new URLSearchParams(window.location.search);
       var parameter = urlParams.get('code');
 
-      // Open the desired page in a new tab
-      var url = 'makefriends://makefriends.com/spotify?code=' + parameter;
-      window.open(url, '_blank');
+      // Function to handle link click
+      function handleClick() {
+        // Display a new message when the link is clicked
+        var newMessage = 'Sync is done!';
+
+        // Replace the existing message with the new message
+        document.body.innerHTML = newMessage;
+      }
+
+      // Create the link element
+      var link = document.createElement('a');
+      link.href = 'makefriends://makefriends.com/spotify?code=' + parameter;
+      link.innerHTML = 'Click here to finish the sync.';
+      link.addEventListener('click', handleClick);
+
+      // Append the link to the body element
+      document.body.appendChild(link);
     };
   </script>
 </head>
