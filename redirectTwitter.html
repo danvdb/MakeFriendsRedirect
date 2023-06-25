@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MakeFriends Redirect Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .message {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #5F9DF7;
+    }
+
+    p {
+      font-size: 24px;
+      color: #5F9DF7;
+      margin: 10px 0;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      // Get the parameter from the URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var parameter = urlParams.get('code');
+      
+      // Construct the redirect URL
+      var redirectUrl = 'makefriends://makefriends.com/spotify?code=' + parameter;
+      
+      // Redirect the page
+      window.location.href = redirectUrl;
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <p class="message">Success!</p>
+    <p>Cliquez sur "OK" en haut à gauche</p>
+    <p>Please click on "OK" at the top left</p>
+
+  </div>
+</body>
+</html>
